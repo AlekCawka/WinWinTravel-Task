@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next'
 import type { FiltersResponse } from '@/shared/api/getFilters'
 import { FilterType } from '@/shared/api/types/Filter'
 import type { SearchRequestFilter } from '@/shared/api/types/SearchRequest'
+import { EMPTY_APPLIED } from '@/shared/store/filtersStore'
 
 type FilterModalProps = {
 	open: boolean
@@ -239,7 +240,7 @@ export const FilterModal = ({
 					<button
 						type="button"
 						className="justify-self-end text-sm text-sky-600 hover:text-sky-800"
-						onClick={() => setSelected(buildMapFromApplied(initialApplied))}
+						onClick={() => setSelected(buildMapFromApplied(EMPTY_APPLIED))}
 					>
 						{t('common.clearAll')}
 					</button>
