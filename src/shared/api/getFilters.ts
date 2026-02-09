@@ -13,7 +13,7 @@ export type FiltersResponse = {
 }
 
 export const getFilters = async (): Promise<FiltersResponse> => {
-	const res = await fetch('/src/shared/temp/filterData.json', {
+	const res = await fetch(`${import.meta.env.BASE_URL}filterData.json`, {
 		headers: { Accept: 'application/json' }
 	})
 
